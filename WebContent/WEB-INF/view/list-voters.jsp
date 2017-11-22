@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -29,15 +30,31 @@
 					<th>Last Name</th>
 					<th>Email</th>
 					<th>Comments</th>
+					<th>Action</th>
 					</tr>
 				</thead>
 				<!-- Loop over and print the voters -->
 				<c:forEach var="tempVoter" items="${voters}">
+				
+				<!-- Construct an update link with voter id -->
+				<c:url var="updateLink" value="/voter/showFormForUpdate">
+					<c:param name="voterId" value="${tempVoter.id}" />
+				</c:url>
+				
+				<!-- Construct a delete link with voter id -->
+				<c:url var="deleteLink" value="/voter/delete">
+					<c:param name="voterId" value="${tempVoter.id}" />
+				</c:url>
 					<tr>
 						<td>${tempVoter.firstName}</td>
 						<td>${tempVoter.lastName}</td>
 						<td>${tempVoter.email}</td>
 						<td>${tempVoter.comments}</td>
+						<td><a href="${updateLink}">Update</a>
+						|<a href="${deleteLink}" 
+						onclick="if (!(confirm('Are you sure you want to delete this voter?')))
+						return false">Delete</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>

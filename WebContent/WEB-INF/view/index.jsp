@@ -1,9 +1,10 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en-us" ng-app="myApp">
 <head>
-<title>Vote on April 14th!</title>
+<title>Vote in April, 2018</title>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta charset="UTF-8">
 
@@ -18,17 +19,19 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+
+<!-- load angular via CDN -->
+<script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+<script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+
+ <jsp:include page="css_include.jsp"></jsp:include>
+
 <style>
 html, body, input, select, textarea {
 	font-size: 1.05em;
 }
 </style>
 
-<!-- load angular via CDN -->
-<script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
-<script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
-<script src="resources/js/app.js"></script>
 </head>
 <body>
 
@@ -36,8 +39,7 @@ html, body, input, select, textarea {
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/">Jason Mayer for Brentwood
-						School Board</a>
+					<a class="navbar-brand" href="/">Jason Mayer for Brentwood School Board</a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#/"><i></i> Biography</a></li>
@@ -76,4 +78,4 @@ html, body, input, select, textarea {
 	</div>
 </body>
 </html>
-<!-- If the angular page above doesn't work, go back to redirect below in keeping with Spring tutorial -->
+<!-- Project has stopped working. Doesn't access css or module anymore, don't get it. -->

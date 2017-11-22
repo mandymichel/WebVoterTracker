@@ -16,6 +16,9 @@
 		<!-- Sends info from forms bound together as model attribute voter to the saveVoter method in the 
 		voter controller that is annotated with @PostMapping -->
 		<form:form action="saveVoter" modelAttribute="voter" method="GET">
+		<!-- Need to associate this data with a given voter, otherwise, update won't update a voter
+		, just create a new one -->
+			<form:hidden path="id" />
 			<table class="table table-hover">
 				<tbody>
 					<tr>

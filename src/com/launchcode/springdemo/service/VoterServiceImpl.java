@@ -28,4 +28,18 @@ public class VoterServiceImpl implements VoterService {
 		voterDAO.saveVoter(theVoter);
 	}
 
+	@Override
+	public Voter getVoter(int theId) {
+		System.out.println("Hi");
+		// TODO Auto-generated method stub
+		return voterDAO.getVoter(theId);
+	}
+
+	@Override
+	@Transactional
+	public void deleteVoter(int theId) {
+		voterDAO.deleteVoter(theId);
+		
+	}
+
 }

@@ -10,4 +10,8 @@ public interface VoterService {
 
 	public void saveVoter(Voter theVoter);
 
+	public Voter getVoter(int theId);
+
+	public void deleteVoter(int theId);
+
 }
